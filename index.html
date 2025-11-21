@@ -411,7 +411,7 @@ map.on('load', async () => {
 
     const ROAD_HEIGHTS = {
       'Road': 0.10,     // 10 cm height
-      'Divider': 0.20   // Divider higher than road
+      'Divider': 0.50   // Divider higher than road
     };
 
     const DEFAULT_ROAD_COLOR = '#ff0000';
@@ -424,7 +424,7 @@ map.on('load', async () => {
       paint: {
         'fill-extrusion-height': [
           'match',
-          ['get','LAYER'],
+          ['get','Layer'],
           'Divider', ROAD_HEIGHTS['Divider'],
           'Road', ROAD_HEIGHTS['Road'],
           DEFAULT_ROAD_HEIGHT
@@ -432,7 +432,7 @@ map.on('load', async () => {
         'fill-extrusion-base': 0,
         'fill-extrusion-color': [
           'match',
-          ['get','LAYER'],
+          ['get','Layer'],
           'Divider', ROAD_COLORS['Divider'],
           'Road', ROAD_COLORS['Road'],
           DEFAULT_ROAD_COLOR
